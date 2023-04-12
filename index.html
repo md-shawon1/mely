@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday Mely</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .popup {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      text-align: center;
+      opacity: 0;
+      max-width: 90%; /* Adjust max-width for responsiveness */
+    }
+
+    .popup img {
+      max-width: 100%;
+      border-radius: 50%; /* Make the image round */
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup" id="birthdayPopup">
+    <h1 id="popupText">Happy Birthday Mely</h1>
+    <img src="https://example.com/image.jpg" alt="Birthday Image">
+  </div>
+
+  <script>
+    // JavaScript code for popup animation and background color effect
+    function showPopup(element) {
+      var opacity = 0;
+      var timer = setInterval(function() {
+        if (opacity >= 1) {
+          clearInterval(timer);
+        }
+        element.style.opacity = opacity;
+        opacity += 0.05;
+      }, 50);
+    }
+
+    var name = prompt("Enter your name:").toLowerCase(); // Get the user's name and convert to lowercase
+    var validNames = ["rubaiyat hossain mely", "mely", "rubaiyat hossain", "rubaiyat"]; // List of valid names
+    if (validNames.includes(name)) { // Check if the name is in the list of valid names
+      var birthdayPopup = document.getElementById('birthdayPopup');
+      var popupText = document.getElementById('popupText');
+      showPopup(birthdayPopup);
+
+      setTimeout(function() {
+        popupText.style.transition = "0.5s";
+        popupText.style.transform = "translateY(-20px)";
+        popupText.textContent = "Congratulations on passing these days of your life happily";
+      }, 2000); // Change text after 2 seconds
+
+      setTimeout(function() {
+        popupText.style.transition = "0.5s";
+        popupText.style.transform = "translateY(-20px)";
+        popupText.textContent = "Best of Luck for the Future";
+      }, 4000); // Change text after 4 seconds
+
+      setTimeout(function() {
+        popupText.style.transition = "0.5s";
+        popupText.style.transform = "translateY(-20px)";
+        popupText.textContent = "Happy Birthday Mely";
+      }, 6000); // Change text after 6 seconds
+
+    } else {
+      alert("It is not for you! Please leave.");
+    }
+
+    var colors = ['#ff758c', '#ff7eb3', '#ffa69e', '#ffc1a1', '#ffdb9e'];
+    var index = 0;
+    setInterval(function() {
+      document.body.style.background = colors[index];
+      index = (index + 1) % colors.length;
+    }, 1000);
+  </script>
+</body>
+</html>
